@@ -105,6 +105,6 @@ $(document).ready(function () {
     startCanvas(scrollTop,'htmlCanvas',70);
     startCanvas(scrollTop,'cssCanvas',70);
     startCanvas(scrollTop,'jsCanvas',55);
-    startCanvas(scrollTop,'mysqlCanvas',10,.1);
+    startCanvas(scrollTop,'mysqlCanvas',10,.2);
   });
 });
