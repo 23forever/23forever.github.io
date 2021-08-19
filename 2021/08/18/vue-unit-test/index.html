@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://23forever.cn">
-  <title>Tag: 感想 | 23forever的个人博客</title>
+  <title>Vue单元测试 | 23forever的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="23forever的个人博客">
-<meta property="og:url" content="https://23forever.cn/tags/感想/index.html">
+  <meta name="description" content="何为单元测试单元测试（unit testing），是指对软件中的最小可测试单元进行检查和验证，它是软件开发非常基础的一部分。单元测试会封闭执行最小化单元的代码，使得添加新功能和追踪问题更容易。 为什么要做单元测试很明显，单元测试会增加开发的工作量，延长开发周期。如果不能解决一些问题，那么谁又会投入大量时间去做这些无用功">
+<meta name="keywords" content="笔记,Vue,单元测试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue单元测试">
+<meta property="og:url" content="https://23forever.cn/2021/08/18/vue-unit-test/index.html">
 <meta property="og:site_name" content="23forever的个人博客">
+<meta property="og:description" content="何为单元测试单元测试（unit testing），是指对软件中的最小可测试单元进行检查和验证，它是软件开发非常基础的一部分。单元测试会封闭执行最小化单元的代码，使得添加新功能和追踪问题更容易。 为什么要做单元测试很明显，单元测试会增加开发的工作量，延长开发周期。如果不能解决一些问题，那么谁又会投入大量时间去做这些无用功呢。事实上，单元测试在大厂广受好评，在一些研发团队的实践中，它不仅能大大降低代码">
+<meta property="og:image" content="https://23forever.cn/img/unit_test.png">
+<meta property="og:updated_time" content="2021-08-19T18:51:13.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="23forever的个人博客">
+<meta name="twitter:title" content="Vue单元测试">
+<meta name="twitter:description" content="何为单元测试单元测试（unit testing），是指对软件中的最小可测试单元进行检查和验证，它是软件开发非常基础的一部分。单元测试会封闭执行最小化单元的代码，使得添加新功能和追踪问题更容易。 为什么要做单元测试很明显，单元测试会增加开发的工作量，延长开发周期。如果不能解决一些问题，那么谁又会投入大量时间去做这些无用功呢。事实上，单元测试在大厂广受好评，在一些研发团队的实践中，它不仅能大大降低代码">
+<meta name="twitter:image" content="https://23forever.cn/img/unit_test.png">
   
     <link rel="alternative" href="/atom.xml" title="23forever的个人博客" type="application/atom+xml">
   
@@ -151,60 +158,234 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue-unit-test" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/2018-midyearWorkFeelings/" class="archive-article-date">
-  	<time datetime="2018-07-09T15:25:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/2018-midyearWorkFeelings/">2018半年度工作感想</a>
+    <h1 class="article-title" itemprop="name">
+      Vue单元测试
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/08/18/vue-unit-test/" class="archive-article-date">
+  	<time datetime="2021-08-18T14:10:37.921Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="何为单元测试"><a href="#何为单元测试" class="headerlink" title="何为单元测试"></a>何为单元测试</h3><p>单元测试（unit testing），是指对软件中的最小可测试单元进行检查和验证，它是软件开发非常基础的一部分。单元测试会封闭执行最小化单元的代码，使得添加新功能和追踪问题更容易。</p>
+<h3 id="为什么要做单元测试"><a href="#为什么要做单元测试" class="headerlink" title="为什么要做单元测试"></a>为什么要做单元测试</h3><p>很明显，单元测试会增加开发的工作量，延长开发周期。如果不能解决一些问题，那么谁又会投入大量时间去做这些无用功呢。事实上，单元测试在大厂广受好评，在一些研发团队的实践中，它不仅能大大降低代码上线前的缺陷率，更能缩短从代码开发到功能上线的周期，实乃降低软件开发成本的一柄利器。<br>单元测试的好处有：</p>
+<ul>
+<li>提供描述组件行为的文档</li>
+<li>节省手动测试的时间</li>
+<li>减少研发时产生的 bug</li>
+<li>改进代码设计，提高代码的稳定性和可维护性</li>
+</ul>
+<h3 id="如何编写有效的单元测试"><a href="#如何编写有效的单元测试" class="headerlink" title="如何编写有效的单元测试"></a>如何编写有效的单元测试</h3><p>好的单元测试应该具有如下特点：</p>
+<ul>
+<li>尽可能的减少外部依赖</li>
+<li>测试用例覆盖到业务的核心功能</li>
+<li>可以直观的从用例名看出用例的功能</li>
+</ul>
+<h4 id="减少外部依赖"><a href="#减少外部依赖" class="headerlink" title="减少外部依赖"></a>减少外部依赖</h4><img src="/img/unit_test.png" title="测试金字塔">
+<p>单元测试本身就是当下所有软件测试中粒度最小的测试，应该只关注自身的功能。为了达到这一点，对于所有的外部依赖（数据、外部组件、参数等），我们都采取 mock 的方式来解决。</p>
+<h4 id="测试核心功能"><a href="#测试核心功能" class="headerlink" title="测试核心功能"></a>测试核心功能</h4><p>如果你的测试用例是从复制粘贴开始，很明显这样的测试是没有太多意义也没有灵魂的。从你的代码设计开始，你已然清楚当前组件的核心功能是哪些，那么我们就可以针对核心功能来编写测试用例。<br>比如需求是一个提交用户信息的功能，需要提交用户姓名、手机号、邮箱，其中用户姓名和手机号必填，邮箱选填写但必须满足通用的邮箱格式。对应的我们的测试用例就可以是：</p>
+<ul>
+<li>当姓名或手机号为空时，提交失败</li>
+<li>当邮箱不满足格式时，无法通过校验</li>
+<li>当所有数据满足要求时，请求函数被调用</li>
+</ul>
+<h4 id="可读的测试用例"><a href="#可读的测试用例" class="headerlink" title="可读的测试用例"></a>可读的测试用例</h4><p>测试名应该包含两部分：测试条件、预期行为，业界通用的做法是<code>should result when operation</code>格式。以上一段第一条为例取名：<code>should submit failed when user phone is empty</code>，这样的用例名能够清楚的表达条件和结果，当你执行 test 看到一条条如此的测试用例通过时，你很清楚组件它能干什么，即便没有通过，你也能快速定位出问题所在。</p>
+<h3 id="jest-强大的单元测试框架"><a href="#jest-强大的单元测试框架" class="headerlink" title="jest 强大的单元测试框架"></a><code>jest</code> 强大的单元测试框架</h3><p>jest 是一个功能强大的测试框架，它所提供的整套的测试函数可以覆盖 js 代码全场景。在<code>describe</code>块内部，我们可以使用<code>expect</code>来断言各种场景。</p>
+<h4 id="钩子回调函数"><a href="#钩子回调函数" class="headerlink" title="钩子回调函数"></a>钩子回调函数</h4><p>在<code>describe</code>块内部，jest 提供了<code>beforeEach</code> <code>afterEach</code> <code>beforeAll</code> <code>afterAll</code>四个钩子函数，对应了每个测试<code>test</code>的开始前和结束后，所有测试<code>test</code>的开始前和结束后，这对于减少重复代码很有用。</p>
+<h4 id="预计"><a href="#预计" class="headerlink" title="预计"></a>预计</h4><ul>
+<li><code>toBe</code>使用===进行判断，一般用来判断原始类型的值</li>
+<li><code>toEqual</code>比较对象的每个属性是否都相同，一般用来比较复杂类型的值，如 <code>JSON</code> 数据</li>
+<li><code>toContain</code>与数组的 <code>contains</code> 使用相同</li>
+<li><code>toMatch</code>用来匹配正则表达式，也可用于判断是否包含字符</li>
+</ul>
+<h4 id="mock-模拟"><a href="#mock-模拟" class="headerlink" title="mock 模拟"></a><code>mock</code> 模拟</h4><p><code>jest.fn</code> 函数执行返回一个 <code>mockFn</code> 函数，该函数上挂载了提供各种功能的 <code>mock</code> 函数</p>
+<ul>
+<li><code>mockFn.mockResolvedValue</code>用来 <code>mock</code> 异步函数，返回一个状态为 <code>resolved</code> 的 <code>Promise</code> 实例，常用的场景是用来模拟 <code>axios.get</code> 和 <code>axios.post</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">jest.mock(<span class="string">"axios"</span>);</span><br><span class="line">axios.get = jest.fn(); <span class="comment">// 得到mockFn函数，挂载了各种mock函数</span></span><br><span class="line">axios.get.mockResolvedValue(data); <span class="comment">// 下一次执行axios.get()时会返回Promise.resolve(data)</span></span><br><span class="line"><span class="comment">// 被测组件中调用axiso.get会得到一个resolved的Promise实例</span></span><br><span class="line">axios.get(url).then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;&#125;);</span><br><span class="line"><span class="comment">// 至此在then的回调函数中拿到传递的data，成功mock了一个axios.get的调用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>mockFn.mockRejectedValue</code>同理构造一个状态为 <code>rejected</code> 的 <code>Promise</code> 实例，可以用来模拟请求失败的场景</li>
+</ul>
+<h4 id="jest-spyOn-object-methodName"><a href="#jest-spyOn-object-methodName" class="headerlink" title="jest.spyOn(object, methodName)"></a><code>jest.spyOn(object, methodName)</code></h4><p>调用<code>jest.spyOn</code>会创建一个 <code>mock</code>函数，类似于 <code>jest.fn</code>，最大的不同点在于 <code>spyOn</code> 创建的函数可以被追踪到（猜测原理可能是在原有的函数上进行了注入），这大有用处，我们可以用来断言某个函数是否被调用，这对于我们验证某些场景是非常有用的。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// template `&lt;button @click="submit"&gt;test&lt;/button&gt;`</span></span><br><span class="line">it(<span class="string">"test function be called"</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> spy = jest.spyOn(Component.methods, <span class="string">"submit"</span>);</span><br><span class="line">  <span class="keyword">const</span> wrapper = mount(HelloWorld);</span><br><span class="line">  <span class="keyword">const</span> btn = wrapper.find(<span class="string">"button"</span>);</span><br><span class="line">  <span class="keyword">await</span> btn.trigger(<span class="string">"click"</span>);</span><br><span class="line">  expect(spy).toHaveBeenCalled(); <span class="comment">// true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Vue-Test-Utils-核心功能"><a href="#Vue-Test-Utils-核心功能" class="headerlink" title="Vue Test Utils 核心功能"></a><code>Vue Test Utils</code> 核心功能</h3><h4 id="子组件存根"><a href="#子组件存根" class="headerlink" title="子组件存根"></a>子组件存根</h4><p>专注当前组件的测试，组件存根可以解决外部组件的依赖问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mount(Component, &#123;</span><br><span class="line">  stubs: &#123;</span><br><span class="line">    <span class="comment">// 使用一个特定的实现作为存根</span></span><br><span class="line">    <span class="string">"registered-component"</span>: Foo,</span><br><span class="line">    <span class="comment">// 使用创建默认的实现作为存根。</span></span><br><span class="line">    <span class="comment">// 这里默认存根的组件名是 `another-component`。</span></span><br><span class="line">    <span class="comment">// 默认存根是 `&lt;$&#123;the component name of default stub&#125;-stub&gt;`。</span></span><br><span class="line">    <span class="string">"another-component"</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="mock-组件依赖的参数"><a href="#mock-组件依赖的参数" class="headerlink" title="mock 组件依赖的参数"></a><code>mock</code> 组件依赖的参数</h4><p>组件可能依赖外部参数，例如组件是通过路由跳转进入的，携带部分参数，这时候可以通过 <code>mocks</code> 配置来解决外部参数依赖问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> $route = &#123;</span><br><span class="line">  path: <span class="string">"http://www.example-path.com"</span>,</span><br><span class="line">  query: &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  params: &#123;</span><br><span class="line">    c: <span class="number">3</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> wrapper = mount(Component, &#123;</span><br><span class="line">  mocks: &#123;</span><br><span class="line">    $route,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="wrapper-强大的包裹器"><a href="#wrapper-强大的包裹器" class="headerlink" title="wrapper 强大的包裹器"></a>wrapper 强大的包裹器</h4><p>一个 <code>Wrapper</code> 是一个包括了一个挂载组件或 <code>vnode</code>，以及测试该组件或 <code>vnode</code> 的方法，它提供了一系列函数，可以像 JQuery 一样便捷的进行操作和测试。</p>
+<ul>
+<li><code>contains</code>断言<code>Wrapper</code>包含元素或组件，<code>wrapper.contains(&#39;p&#39;)</code> <code>wrapper.contains(Bar)</code></li>
+<li><code>emitted</code>返回一个包含已触发的自定义事件的对象，可以用来断言事件触发和传参</li>
+<li><code>find</code> <code>findComponent</code>用来查找元素和组件，支持选择器，功能强大</li>
+<li><code>isVisible</code>断言组件可见，通过<code>display:none;</code>,<code>visibility:hidden;</code>,<code>opacity:0;</code>来判断</li>
+<li><code>setChecked</code> <code>setSelected</code> <code>setValue</code>模拟单/多选框、下拉框、输入框等选择或输入行为并更新 v-model 绑定的数据</li>
+<li><code>setData</code> <code>setProps</code> 主动设置<code>Wrapper</code>的<code>vm</code>的 data 和 props 属性，便于测试</li>
+<li><code>text</code> <code>html</code> 返回元素的文本内容和字符形式的<code>DOM</code>节点</li>
+</ul>
+<h4 id="测试-dom-事件"><a href="#测试-dom-事件" class="headerlink" title="测试 dom 事件"></a>测试 dom 事件</h4><p>使用 <code>trigger</code> 可以模拟 <code>dom</code> 事件，常见的鼠标和键盘操作都可以实现。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">test(<span class="string">"triggers a click"</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">// 鼠标</span></span><br><span class="line">  <span class="keyword">const</span> wrapper = mount(MyButton);</span><br><span class="line">  <span class="keyword">await</span> wrapper.trigger(<span class="string">"click"</span>);</span><br><span class="line">  <span class="comment">// 键盘</span></span><br><span class="line">  <span class="keyword">const</span> wrapper = mount(MyComponent);</span><br><span class="line">  <span class="keyword">await</span> wrapper.trigger(<span class="string">"keydown.enter"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="异步行为"><a href="#异步行为" class="headerlink" title="异步行为"></a>异步行为</h4><p><code>Vue</code> 采用异步更新，所以交互过程中必然会产生异步行为，常见的异步行为如：视图更新、<code>AJAX</code> 请求、定时器都有解决方案。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 等待Vue视图更新</span></span><br><span class="line">it(<span class="string">'button click should increment the count text'</span>, <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  expect(wrapper.text()).toContain(<span class="string">'0'</span>);</span><br><span class="line">  <span class="keyword">const</span> button = wrapper.find(<span class="string">'button'</span>);</span><br><span class="line">  <span class="keyword">await</span> button.trigger(<span class="string">'click'</span>);</span><br><span class="line">  <span class="comment">// 等价于如下代码</span></span><br><span class="line">  <span class="comment">// button.trigger('click');</span></span><br><span class="line">  <span class="comment">// await wrapper.vm.$nextTick();</span></span><br><span class="line">  expect(wrapper.text()).toContain(<span class="string">'1'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// mock异步请求</span></span><br><span class="line">jest.mock(<span class="string">'axios'</span>, () =&gt; (&#123;</span><br><span class="line">  get: <span class="built_in">Promise</span>.resolve(<span class="string">'value'</span>);</span><br><span class="line">&#125;));</span><br><span class="line">it(<span class="string">'fetches async when a button is clicked'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> wrapper = shallowMount(Foo);</span><br><span class="line">  wrapper.find(<span class="string">'button'</span>).trigger(<span class="string">'click'</span>);</span><br><span class="line">  expect(wrapper.text()).toBe(<span class="string">'value'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>需要去思考单元测试究竟能做什么，能起到什么作用。同样需要去实践，去参与进来我们才能慢慢挖掘它的力量和潜能，用心的去探索和研究它，也许要不了多久我们可能会感慨：单元测试真香。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">感想</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">单元测试</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/笔记//" class="article-tag-list-link color3">笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://23forever.cn/2021/08/18/vue-unit-test/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/07/20/nodeJs-study-basic/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Node.js学习(1)-基础知识</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="vue-unit-test" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytHjGqRG",
+        conf: "a5a5e318792859e2c24d7a5a4ece5336"
+    });
+</script>
+</script>
+  
+
+  
+
+  
 
 
           </div>
@@ -214,7 +395,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 23forever
+    		&copy; 2021 23forever
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -227,9 +408,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -301,14 +482,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">jsonp</a>
               </li>
              
@@ -317,11 +490,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
               </li>
             
             <div class="clearfix"></div>
