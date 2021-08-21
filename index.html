@@ -56,9 +56,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/笔记/">笔记</a></li>
+				<li><a href="/tags/随笔/">随笔</a></li>
 	        
-				<li><a href="/components/">组件</a></li>
+				<li><a href="/component/index.html">简历</a></li>
 	        
 			</ul>
 		</nav>
@@ -73,7 +73,7 @@
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">https://23forever.github.io</a>
     			
             
 		</nav>
@@ -82,7 +82,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/23forever" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="mailto:lzy23forever@live.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="/23forever@live.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -123,7 +123,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/23forever" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="mailto:lzy23forever@live.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="/23forever@live.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -134,9 +134,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/笔记/">笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/随笔/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/components/">组件</a></li>
+					<li style="width: 33.333333333333336%"><a href="/component/index.html">简历</a></li>
 		        
 				</ul>
 			</nav>
@@ -277,6 +277,10 @@
 
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/18/vue-unit-test/">展开全文 >></a>
+        </p>
+      
 
       
       <div class="clearfix"></div>
@@ -387,6 +391,10 @@
 
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/20/nodeJs-study-basic/">展开全文 >></a>
+        </p>
+      
 
       
       <div class="clearfix"></div>
@@ -435,7 +443,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="跨域原理"><a href="#跨域原理" class="headerlink" title="跨域原理"></a>跨域原理</h3><p>ajax使用XMLHTTPRequest对象发送跨域请求时，会遇到同源策略，被浏览器所拦截，但我们会发现诸如script、img、link标签请求资源时不会受到跨域影响。例如：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"http://www.a.com/scripts/1.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"http://www.b.com/images/1.jpg"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"http://www.c.com/assets/css/1.css"</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>首先，我们要理解跨域：跨域是指在脚本代码中向非同源域发送HTTP请求。这只是跨站资源请求，而我们恰好可以使用这种方式来实现跨域HTTP请求。看如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>jsonp demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- script-1 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">            function handle(data)&#123;</span></span><br><span class="line"><span class="undefined">                alert(data);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- script-2 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">            handle('hello World');</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>首先，我们要理解跨域：跨域是指在脚本代码中向非同源域发送HTTP请求。这只是跨站资源请求，而我们恰好可以使用这种方式来实现跨域HTTP请求。看如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>jsonp demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- script-1 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="keyword">function</span> <span class="title">handle</span>(<span class="params">data</span>)</span>&#123;</span></span><br><span class="line"><span class="undefined">                alert(data);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- script-2 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">            handle(<span class="string">'hello World'</span>);</span></span><br><span class="line"><span class="undefined">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
         
           <a class="article-more-a" href="/2018/01/13/jsonp/#more">more >></a>
         
@@ -451,15 +459,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">jsonp</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">跨域</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -478,6 +486,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/13/jsonp/">展开全文 >></a>
+        </p>
       
 
       
@@ -578,6 +590,10 @@
 
 
       
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/08/webpack-base/">展开全文 >></a>
+        </p>
+      
 
       
       <div class="clearfix"></div>
@@ -651,11 +667,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -674,6 +690,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/05/git-commend/">展开全文 >></a>
+        </p>
       
 
       
@@ -743,11 +763,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -766,6 +786,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/04/git-install/">展开全文 >></a>
+        </p>
       
 
       
@@ -864,6 +888,10 @@
 	</div>
 
 
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/03/vue-spa/">展开全文 >></a>
+        </p>
       
 
       
@@ -964,7 +992,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">https://23forever.github.io</a></li>
       
         
     </ul>
@@ -985,7 +1013,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感想</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -997,23 +1033,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1022,6 +1042,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">单元测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1073,7 +1097,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://blog.youzhej.cn" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>blog-youzhej</a>
+              <a href="https://hexo.io/zh-cn/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>hexo官网</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yilia主题</a>
             </li>
           
         </ul>
@@ -1084,7 +1112,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">&lt;p&gt;前端程序猿，&lt;a href=&#39;http://resume.23forever.cn&#39; target=&#39;_blank&#39; style=&#39;color:#fffdd8;&#39;&gt;简历主页 &amp;gt;&amp;gt;&lt;/a&gt;&lt;/p&gt;</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
   	  	
     	</section>
     
