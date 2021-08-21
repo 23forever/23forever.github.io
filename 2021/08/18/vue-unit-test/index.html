@@ -17,7 +17,7 @@
 <meta property="og:description" content="何为单元测试 单元测试（unit testing），是指对软件中的最小可测试单元进行检查和验证，它是软件开发非常基础的一部分。单元测试会封闭执行最小化单元的代码，使得添加新功能和追踪问题更容易。 为什么要做单元测试很明显，单元测试会增加开发的工作量，延长开发周期。如果不能解决一些问题，那么谁又会投入大量时间去做这些无用功呢。事实上，单元测试在大厂广受好评，在一些研发团队的实践中，它不仅能大大降低代">
 <meta property="og:image" content="https://23forever.github.io/img/unit_test.jpg">
 <meta property="og:image" content="https://23forever.github.io/img/mockFn.png">
-<meta property="og:updated_time" content="2021-08-21T06:05:01.813Z">
+<meta property="og:updated_time" content="2021-08-21T09:50:23.344Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue单元测试">
 <meta name="twitter:description" content="何为单元测试 单元测试（unit testing），是指对软件中的最小可测试单元进行检查和验证，它是软件开发非常基础的一部分。单元测试会封闭执行最小化单元的代码，使得添加新功能和追踪问题更容易。 为什么要做单元测试很明显，单元测试会增加开发的工作量，延长开发周期。如果不能解决一些问题，那么谁又会投入大量时间去做这些无用功呢。事实上，单元测试在大厂广受好评，在一些研发团队的实践中，它不仅能大大降低代">
@@ -189,20 +189,20 @@
 <li>改进代码设计，提高代码的稳定性和可维护性</li>
 </ul>
 <a id="more"></a>
-<h3 id="如何编写有效的单元测试"><a href="#如何编写有效的单元测试" class="headerlink" title="如何编写有效的单元测试"></a>如何编写有效的单元测试</h3><p>好的单元测试应该具有如下特点：</p>
+<h3 id="如何编写有效的单元测试"><a href="#如何编写有效的单元测试" class="headerlink" title="如何编写有效的单元测试"></a>如何编写有效的单元测试</h3><p>个人认为好的单元测试应该具有如下特点：</p>
 <ul>
 <li>尽可能的减少外部依赖</li>
 <li>测试用例覆盖到业务的核心功能</li>
 <li>可以直观的从用例名看出用例的功能</li>
 </ul>
 <h4 id="减少外部依赖"><a href="#减少外部依赖" class="headerlink" title="减少外部依赖"></a>减少外部依赖</h4><p>单元测试本身就是当下所有软件测试中粒度最小的测试，应该只关注自身的功能。为了达到这一点，对于所有的外部依赖（数据、外部组件、参数等），我们都采取 <code>mock</code> 的方式来解决。</p>
-<h4 id="测试核心功能"><a href="#测试核心功能" class="headerlink" title="测试核心功能"></a>测试核心功能</h4><p>如果你的测试用例是从复制粘贴开始，很明显这样的测试是没有太多意义也没有灵魂的。从你的代码设计开始，你已然清楚当前组件的核心功能是哪些，那么我们就可以针对核心功能来编写测试用例。<br>比如需求是一个提交用户信息的功能，需要提交用户姓名、手机号、邮箱，其中用户姓名和手机号必填，邮箱选填写但必须满足通用的邮箱格式。对应的我们的测试用例就可以是：</p>
+<h4 id="测试核心功能"><a href="#测试核心功能" class="headerlink" title="测试核心功能"></a>测试核心功能</h4><p>如果你的测试用例是从复制粘贴开始，很明显这样的测试是没有太多意义也没有灵魂的。从你的代码设计开始，你已然清楚当前组件的核心功能是哪些，那么我们就可以针对核心功能来编写测试用例。<br>比如需求是一个提交用户信息的功能，需要提交用户名、手机号、邮箱，其中用户名和手机号必填，邮箱选填写但必须满足通用的邮箱格式。对应的我们的测试用例就可以是：</p>
 <ul>
 <li>当姓名或手机号为空时，提交失败</li>
 <li>当邮箱不满足格式时，无法通过校验</li>
 <li>当所有数据满足要求时，请求函数被调用</li>
 </ul>
-<h4 id="可读的测试用例"><a href="#可读的测试用例" class="headerlink" title="可读的测试用例"></a>可读的测试用例</h4><p>测试名应该包含两部分：测试条件、预期行为，业界通用的做法是<code>should result when operation</code>格式。以上一段第一条为例取名：<code>should submit failed when user phone is empty</code>，这样的用例名能够清楚的表达条件和结果，当你执行 <code>test</code> 看到一条条如此的测试用例通过时，你很清楚组件它能干什么，即便没有通过，你也能快速定位出问题所在。</p>
+<h4 id="可读的测试用例"><a href="#可读的测试用例" class="headerlink" title="可读的测试用例"></a>可读的测试用例</h4><p>测试名应该包含两部分：测试条件、预期行为，有一种格式是<code>should  when</code>格式。以上一段第一条为例取名：<code>should submit failed when mobile number is empty</code>，这样的用例名能够清楚的表达条件和结果，当你执行 <code>test</code> 看到一条条如此的测试用例通过时，你很清楚组件它能干什么，即便没有通过，你也能快速定位出问题所在。</p>
 <h3 id="jest-强大的单元测试框架"><a href="#jest-强大的单元测试框架" class="headerlink" title="jest 强大的单元测试框架"></a><code>jest</code> 强大的单元测试框架</h3><p><code>jest</code> 是一个功能强大的测试框架，它所提供的整套的测试函数可以覆盖 <code>js</code> 代码全场景。在<code>describe</code>块内部，我们可以使用<code>expect</code>来断言各种场景。</p>
 <h4 id="钩子回调函数"><a href="#钩子回调函数" class="headerlink" title="钩子回调函数"></a>钩子回调函数</h4><p>在<code>describe</code>块内部，jest 提供了<code>beforeEach</code> <code>afterEach</code> <code>beforeAll</code> <code>afterAll</code>四个钩子函数，对应了每个测试<code>test</code>的开始前和结束后，所有测试<code>test</code>的开始前和结束后，这对于减少重复代码很有用。</p>
 <h4 id="预计"><a href="#预计" class="headerlink" title="预计"></a>预计</h4><ul>
@@ -266,7 +266,7 @@
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechatPay.jpg">
+                      <img class="reward-img" src="/img/wechatPay.png">
                       <span class="reward-type">微信</span>
                     </div>
                     
